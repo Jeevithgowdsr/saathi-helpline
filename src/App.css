@@ -1,0 +1,162 @@
+/* General */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background: #1976d2;
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.moon-btn,
+.signin-btn,
+.lang-select {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.signin-btn {
+  background: white;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.moon-btn {
+  background: #fff;
+  color: #1976d2;
+}
+
+/* Search Bar */
+.search-section {
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.search-box {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.location-btn {
+  background: #28a745;
+  color: white;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Categories */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+}
+
+.category-btn {
+  border: none;
+  background: #e3f2fd;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.category-btn:hover {
+  background: #1976d2;
+  color: white;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+}
+
+.call-btn {
+  display: block;
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.site-btn {
+  display: block;
+  width: 100%;
+  background: #555;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  background: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  position: sticky;
+  bottom: 0;
+}
+.bottom-nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1976d2;
+}
