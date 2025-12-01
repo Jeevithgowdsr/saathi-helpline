@@ -32,10 +32,10 @@ export function InstallAppPrompt() {
     return (
         <button
             onClick={handleInstallClick}
-            className="fixed bottom-28 left-6 z-40 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-2xl shadow-lg shadow-blue-500/30 flex items-center gap-3 font-bold transition-all hover:scale-105 hover:-translate-y-1 animate-bounce"
+            className="fixed bottom-28 left-6 z-40 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-6 py-3 rounded-2xl shadow-lg shadow-indigo-500/30 flex items-center gap-3 font-bold transition-all hover:scale-105 hover:-translate-y-1 animate-bounce border border-white/20 backdrop-blur-sm"
         >
-            <span className="text-xl">📥</span>
-            <span>Install App</span>
+            <span className="text-xl filter drop-shadow-md">📥</span>
+            <span className="tracking-wide">Install App</span>
         </button>
     );
 }

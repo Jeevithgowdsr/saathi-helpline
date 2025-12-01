@@ -7,6 +7,8 @@ import { InstallAppPrompt } from './components/InstallAppPrompt';
 import { HelplineCard } from './components/HelplineCard';
 import { Navbar } from './components/Navbar';
 import { EmergencyContacts } from './components/EmergencyContacts';
+import './index.css';
+import './App.css';
 
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -90,9 +92,16 @@ function App() {
       navigator.geolocation.getCurrentPosition((position) => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        const mapUrl = `https://www.google.com/maps/search/Police+Station/@${lat},${lon},14z`;
+        const mapUrl = `https://www.google.com/maps?q=${lat},${lon}`;
         window.open(mapUrl, '_blank');
-      }, () => alert("Location access denied."));
+      }, (error) => {
+        console.error("Error getting location:", error);
+        alert("Location access denied or error occurred. Please ensure GPS is on.");
+      }, {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+      });
     } else {
       alert("Geolocation not supported");
     }
@@ -126,7 +135,7 @@ function App() {
   };
 
   return (
-    <div ref={appRef} className="min-h-screen bg-[#f0f4f8] dark:bg-gray-900 transition-colors duration-500 pb-32 pt-28">
+    <div ref={appRef} className="min-h-screen bg-aesthetic-light dark:bg-aesthetic-dark transition-all duration-500 pb-32 pt-28 text-gray-800 dark:text-gray-100">
       <Navbar
         t={t}
         toggleDarkMode={toggleDarkMode}
@@ -140,8 +149,8 @@ function App() {
       {/* Hero Section */}
       <div className="px-4 mb-8">
         <div className="max-w-4xl mx-auto text-center mb-10 animate-fadeInUp">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-800 dark:text-white tracking-tight">
-            {t.title}
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            <span className="text-gradient drop-shadow-sm">{t.title}</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             Your trusted companion for emergency services and helplines across India.
@@ -194,8 +203,8 @@ function App() {
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${selectedCategory === cat
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30 scale-105'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
+                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30 scale-105'
+                : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
                 }`}
               style={{ animationDelay: `${index * 0.05}s` }}
             >

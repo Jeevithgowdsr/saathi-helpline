@@ -2,12 +2,13 @@ import React from 'react';
 
 export function EmergencyContacts({ contacts, setContacts, newContact, setNewContact, t }) {
     return (
-        <div className="mt-8 bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 animate-fadeIn relative overflow-hidden">
+        <div className="mt-8 bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 animate-fadeIn relative overflow-hidden group">
             {/* Decorative background element */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/5 to-purple-500/5 rounded-bl-full -mr-10 -mt-10 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-bl-full -mr-10 -mt-10 pointer-events-none transition-transform group-hover:scale-110 duration-700"></div>
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-green-500/5 to-teal-500/5 rounded-tr-full -ml-10 -mb-10 pointer-events-none"></div>
 
             <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white flex items-center gap-3 relative z-10">
-                <span className="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-xl text-2xl">📱</span>
+                <span className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 p-3 rounded-2xl text-2xl shadow-sm">📱</span>
                 {t.manageContacts}
             </h2>
 

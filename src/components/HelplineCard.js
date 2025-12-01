@@ -7,12 +7,15 @@ export function HelplineCard({ item, t, toggleFavorite, favorites, reportNumber 
 
     return (
         <div className="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden">
+            {/* Gradient Border on Hover */}
+            <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-br from-transparent via-blue-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-150 duration-700"></div>
+            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-150 duration-700 blur-xl"></div>
 
             <div className="relative z-10 flex flex-col h-full items-center text-center">
                 <div className="relative mb-6">
-                    <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center shadow-inner transform group-hover:rotate-6 transition-transform duration-500">
+                    <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center shadow-inner transform group-hover:rotate-6 transition-transform duration-500 group-hover:shadow-blue-500/20">
                         <img src={item.image} alt={name} className="w-14 h-14 object-contain drop-shadow-md" />
                     </div>
                     <button
