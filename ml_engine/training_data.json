@@ -1,0 +1,86 @@
+[
+    {
+        "text": "I feel like killing myself, I am so depressed and lonely.",
+        "label": "Mental Health Crisis"
+    },
+    {
+        "text": "I am having severe anxiety attacks and panic.",
+        "label": "Mental Health Crisis"
+    },
+    {
+        "text": "I want to end my life, everything is hopeless.",
+        "label": "Mental Health Crisis"
+    },
+    {
+        "text": "Someone is following me, I am scared he will hurt me.",
+        "label": "Women Safety"
+    },
+    {
+        "text": "A man is harassing me at the bus stop.",
+        "label": "Women Safety"
+    },
+    {
+        "text": "I think I am being stalked by a stranger.",
+        "label": "Women Safety"
+    },
+    {
+        "text": "There is a huge fire in the building next to me!",
+        "label": "Fire Emergency"
+    },
+    {
+        "text": "I smell smoke and see flames coming from the kitchen.",
+        "label": "Fire Emergency"
+    },
+    {
+        "text": "The house is on fire, people are trapped inside.",
+        "label": "Fire Emergency"
+    },
+    {
+        "text": "Two cars crashed on the highway, people are bleeding.",
+        "label": "Road Accident"
+    },
+    {
+        "text": "A bike hit a pedestrian, severe head injury.",
+        "label": "Road Accident"
+    },
+    {
+        "text": "Bad accident on the main road, ambulance needed.",
+        "label": "Road Accident"
+    },
+    {
+        "text": "My husband beats me every day, I need help.",
+        "label": "Domestic Violence"
+    },
+    {
+        "text": "Domestic abuse happening in my neighbor's house.",
+        "label": "Domestic Violence"
+    },
+    {
+        "text": "She is being hit by her partner, please save her.",
+        "label": "Domestic Violence"
+    },
+    {
+        "text": "I found a lost child crying in the park.",
+        "label": "Child Helpline"
+    },
+    {
+        "text": "A child is being forced to work at this shop.",
+        "label": "Child Helpline"
+    },
+    {
+        "text": "I suspect child abuse in the apartment upstairs.",
+        "label": "Child Helpline"
+    },
+    {
+        "text": "Someone hacked my bank account and stole money.",
+        "label": "Cyber Crime"
+    },
+    {
+        "text": "I received a fake call asking for OTP, it's a scam.",
+        "label": "Cyber Crime"
+    },
+    {
+        "text": "My photos are being morphed and shared online.",
+        "label": "Cyber Crime"
+    }
+]

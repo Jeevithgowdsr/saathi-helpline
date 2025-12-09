@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Saathi Helpline - Emergency Assistant App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Saathi Helpline is a comprehensive emergency assistance application designed to provide immediate help during critical situations. It integrates a React frontend, a Node.js backend, and a Python-based ML Engine for advanced AI features.
 
-## Available Scripts
+## 🌟 Key Features
 
-In the project directory, you can run:
+### 🛡️ Core Safety
+*   **Emergency Map**: Real-time tracking of nearby Police, Hospitals, and Fire Stations with navigation.
+*   **Panic Mode**: One-tap SOS that sends SMS with location to emergency contacts and records audio/video.
+*   **Safety Alert System**: Real-time alerts for crime hotspots, accident zones, and weather warnings based on your location.
+*   **Offline Support**: Essential features work even without internet access.
 
-### `npm start`
+### 🤖 AI Powered (ML Engine)
+*   **Saathi Assistant**: An empathetic AI chatbot that provides emotional support and safety advice.
+*   **Voice Assistant**: Hands-free voice commands ("Help me", "Find hospital") for emergencies.
+*   **Smart Helpline Finder**: Search for helplines using natural language (e.g., "I lost my credit card").
+*   **Crime & Safety Watch**: Live updates on safety incidents and crime reports in your area.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 👮 Admin & Agency Portal
+*   **Dashboard**: For agencies to manage alerts, view reports, and analytics.
+*   **Incident Management**: Track and resolve reported incidents.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+*   Node.js (v18+)
+*   Python (v3.9+)
+*   MongoDB (Compass or Atlas)
 
-### `npm run build`
+### 1. Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Frontend & Node Backend:**
+```bash
+npm install
+cd saathi-backend
+npm install
+cd ..
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**ML Engine (Python):**
+```bash
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r ml_engine/requirements.txt
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Running the App
 
-### `npm run eject`
+You can run each service in a separate terminal:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Terminal 1: Node.js Backend**
+```bash
+cd saathi-backend
+node server.js
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Terminal 2: Python ML Engine**
+```bash
+.\.venv\Scripts\activate
+python ml_engine/api.py
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Terminal 3: React Frontend**
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+*   **Frontend**: http://localhost:3000
+*   **Node Backend**: http://localhost:5000
+*   **ML API**: http://localhost:5001
 
-## Learn More
+## 🛠️ Tech Stack
+*   **Frontend**: React, TailwindCSS, Leaflet (Maps), Lucide Icons
+*   **Backend**: Node.js, Express, MongoDB
+*   **AI/ML**: Python, Flask, Sentence-Transformers, Torch, SpeechRecognition
+*   **Deployment**: Ready for Vercel (Front) & Render (Back)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+*Stay Safe with Saathi.*

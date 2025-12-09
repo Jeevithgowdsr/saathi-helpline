@@ -2,7 +2,7 @@ import React from 'react';
 
 export function EmergencyContacts({ contacts, setContacts, newContact, setNewContact, t }) {
     return (
-        <div className="mt-8 bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 animate-fadeIn relative overflow-hidden group">
+        <div className="mt-8 glass dark:glass-dark p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 animate-fadeIn relative overflow-hidden group">
             {/* Decorative background element */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-bl-full -mr-10 -mt-10 pointer-events-none transition-transform group-hover:scale-110 duration-700"></div>
             <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-green-500/5 to-teal-500/5 rounded-tr-full -ml-10 -mb-10 pointer-events-none"></div>

@@ -1,0 +1,102 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- RBAC Helper Functions ---
+
+    // Check if user is logged in
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Fetch user role from 'users' collection
+    // Note: In production, Custom Claims are recommended to avoid this extra read
+    function getUserRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    // Role Checks
+    function isSuperAdmin() {
+      return isAuthenticated() && getUserRole() == 'super-admin';
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (getUserRole() == 'admin' || getUserRole() == 'super-admin');
+    }
+
+    function isAgencyOfficer() {
+      return isAuthenticated() && getUserRole() == 'agency-officer';
+    }
+
+    function isViewer() {
+      return isAuthenticated() && getUserRole() == 'viewer';
+    }
+
+    // --- Collection Rules ---
+
+    // 1. Users Collection
+    // - Admins: Full access
+    // - Users: Read/Write own profile
+    // - Officers/Viewers: Read-only access to users (needed for displaying names in incidents)
+    match /users/{userId} {
+      allow create: if isAuthenticated();
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isAdmin() || isAgencyOfficer() || isViewer());
+      allow update: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+      allow delete: if isSuperAdmin();
+    }
+
+    // 2. Helplines
+    // - Admin: Full access
+    // - Public: Read-only
+    match /helplines/{helplineId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 3. Agencies
+    // - Admin: Full access
+    // - Officers: Read-only (to see their own agency details)
+    match /agencies/{agencyId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // 4. Alerts
+    // - Admin: Full access
+    // - Officers: Read-only (to view active alerts)
+    // - Public: Read-only
+    match /alerts/{alertId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 5. Incidents (Core Operational Data)
+    // - Admin: Full access
+    // - Agency Officer: Read/Write (Update status, assign)
+    // - Viewer: Read-only (For analytics dashboard)
+    // - Public User: Create (Report), Read Own
+    match /incidents/{incidentId} {
+      allow create: if isAuthenticated();
+      
+      allow read: if isAdmin() || 
+                     isAgencyOfficer() || 
+                     isViewer() || 
+                     (isAuthenticated() && resource.data.userId == request.auth.uid);
+                     
+      allow update: if isAdmin() || isAgencyOfficer();
+      
+      allow delete: if isAdmin();
+    }
+
+    // 6. User Reports (Feedback/Complaints)
+    // - Admin: Full access
+    // - Officer: Read-only
+    // - User: Create
+    match /reports/{reportId} {
+      allow create: if isAuthenticated();
+      allow read: if isAdmin() || isAgencyOfficer();
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+  }
+}

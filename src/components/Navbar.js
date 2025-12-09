@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Navbar({ t, toggleDarkMode, lang, setLang, user, handleLogin, handleLogout }) {
+export function Navbar({ t, toggleDarkMode, lang, setLang, user, handleLogin, handleLogout, search, setSearch }) {
     return (
         <header className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300">
             <div className="glass dark:glass-dark rounded-2xl px-6 py-4 flex justify-between items-center relative overflow-hidden group">
@@ -18,6 +18,17 @@ export function Navbar({ t, toggleDarkMode, lang, setLang, user, handleLogin, ha
                 </span>
 
                 <div className="flex items-center gap-4 relative z-10">
+                    {/* Search Bar */}
+                    <div className="hidden md:flex items-center bg-white/50 dark:bg-gray-800/50 rounded-xl px-3 py-2 border border-white/20 dark:border-gray-700 focus-within:ring-2 focus-within:ring-blue-500 transition-all">
+                        <span className="text-gray-500 mr-2">🔍</span>
+                        <input
+                            type="text"
+                            placeholder="Search helplines..."
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            className="bg-transparent border-none outline-none text-sm text-gray-800 dark:text-white w-48 placeholder-gray-500"
+                        />
+                    </div>
                     <button
                         onClick={toggleDarkMode}
                         className="p-2.5 rounded-xl bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm text-xl backdrop-blur-sm border border-white/20 dark:border-gray-700"

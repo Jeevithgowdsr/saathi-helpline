@@ -6,7 +6,7 @@ export function HelplineCard({ item, t, toggleFavorite, favorites, reportNumber 
     const isFavorite = favorites.includes(name);
 
     return (
-        <div className="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden">
+        <div className="group relative glass dark:glass-dark rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden">
             {/* Gradient Border on Hover */}
             <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-br from-transparent via-blue-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 

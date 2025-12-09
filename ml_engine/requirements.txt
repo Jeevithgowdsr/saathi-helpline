@@ -1,0 +1,11 @@
+sentence-transformers
+torch
+numpy
+pandas
+flask
+flask-cors
+firebase-admin
+SpeechRecognition
+pydub
+better_profanity
+edge-tts
